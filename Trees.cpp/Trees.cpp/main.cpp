@@ -12,8 +12,11 @@ using std::cin;
 
 struct Node{
     int data;
-    Node* left = NULL;
-    Node* right = NULL;
+    Node* left;
+    Node* right;
+    Node(){
+	left = right = NULL;
+	}
 };
 
 class Tree{
@@ -54,21 +57,21 @@ class Tree{
     }
 
 
-    Node *insert(Node *tree,int ele)
+    Node *insert(Node *& elem,int ele)
     {
-        if(tree==NULL)
+        if(elem==NULL)
         {
-            tree=new Node;
-            tree->left=tree->right=NULL;
-            tree->data=ele;
+            elem=new Node;
+            elem->left=elem->right=NULL;
+            elem->data=ele;
             count++;
         }
         else
             if(count%2==0)
-                tree->left=insert(tree->left,ele);
+                elem->left=insert(elem->left,ele);
             else
-                tree->right=insert(tree->right,ele);
-        return(tree);
+                elem->right=insert(elem->right,ele);
+        return(elem);
     }
     
     void create(int elem)
@@ -118,8 +121,9 @@ class Tree{
 
     }
     
-    void preorder(struct Node* node1){
+    void preorder(struct Node*& node1){
         if(node1==NULL){
+            cout<<"\n It shouldnt reach here";
             cout<<"\n ";            //What the heck?
             return;
         }
@@ -127,8 +131,9 @@ class Tree{
         preorder(node1->left);
         preorder(node1->right);
     }
-    void postorder(struct Node* node1){
+    void postorder(struct Node*& node1){
         if(node1==NULL){
+            cout<<"\n It shouldnt reach here";
             cout<<"\n ";
             return;
         }
@@ -136,16 +141,16 @@ class Tree{
         postorder(node1->right);
         cout<<node1->data;
     }
-    void inorder(struct Node* node1){
+    void inorder(Node*& node1){
         if(node1==NULL){
-            cout<<"\n ";
+            cout<<"\n It shouldnt reach here";
             return;
         }
         inorder(node1->left);
         cout<<node1->data;
         inorder(node1->right);
     }
-    void DFS(Node *Node1)
+    void DFS(Node *&Node1)
         {
             if (Node1)
             {
@@ -160,7 +165,7 @@ class Tree{
                 cout<<Node1->data;
             }
         }
-    void BFS(Node* root)
+    void BFS(Node*& root)
     {
         int h = height(root);
         int i;
@@ -169,7 +174,7 @@ class Tree{
     }
     
     /* Print nodes at a given level */
-    void printlevel(Node* root, int level)
+    void printlevel(Node*& root, int level)
     {
         if (root == NULL)
             return;
@@ -201,7 +206,7 @@ void q3createminitree(Q3Node* &head, Q3Node *parent, int a[], int start, int end
     }
 }
 
-int height(Q3Node *head){
+int height(Q3Node *&head){
     if(head == NULL) return 0;
     return std::max(height(head->left), height(head->right)) + 1;
 }
@@ -212,7 +217,7 @@ Q3Node* minimal(Q3Node* no){
         no = no->left;
     return no;
 }
-Q3Node* successor(Q3Node* no){
+Q3Node* successor(Q3Node*& no){
     if(no == NULL) return NULL;
     if(no->right) return minimal(no->right);
     Q3Node *y = no->parent;

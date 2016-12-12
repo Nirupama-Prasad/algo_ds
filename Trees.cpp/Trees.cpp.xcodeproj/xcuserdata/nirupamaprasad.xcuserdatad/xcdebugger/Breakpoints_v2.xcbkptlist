@@ -15,7 +15,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "122"
             endingLineNumber = "122"
-            landmarkName = "preorder(struct Node* node1)"
+            landmarkName = "isMember(int elem)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -31,8 +31,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "123"
             endingLineNumber = "123"
-            landmarkName = "preorder(struct Node* node1)"
-            landmarkType = "5">
+            landmarkName = "class Tree"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -63,7 +63,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "140"
             endingLineNumber = "140"
-            landmarkName = "inorder(struct Node* node1)"
+            landmarkName = "postorder(struct Node* node1)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -79,7 +79,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "141"
             endingLineNumber = "141"
-            landmarkName = "inorder(struct Node* node1)"
+            landmarkName = "postorder(struct Node* node1)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -95,7 +95,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "142"
             endingLineNumber = "142"
-            landmarkName = "inorder(struct Node* node1)"
+            landmarkName = "postorder(struct Node* node1)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
